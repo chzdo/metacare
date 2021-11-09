@@ -40,6 +40,8 @@ async function getMovies(): Promise<void> {
 
 cron.schedule("* * * * *", () => getMovies());
 
+export { getMovies };
+
 cron.schedule("30 * * * *", () => {
  axios.get("https://starswarapp.herokuapp.com").then((data) => logger.info(data));
 });
