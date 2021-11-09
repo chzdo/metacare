@@ -6,7 +6,7 @@ const { STAR_URL } = process.env;
 
 async function getMovies(): Promise<void> {
  try {
-  logger.debug("running cron job");
+  logger.info("running cron job");
   const { data } = await axios.get(STAR_URL);
 
   if (data) {
@@ -41,7 +41,3 @@ async function getMovies(): Promise<void> {
 cron.schedule("* * * * *", () => getMovies());
 
 export { getMovies };
-
-cron.schedule("30 * * * *", () => {
- axios.get("https://starswarapp.herokuapp.com").then((data) => logger.info(data));
-});

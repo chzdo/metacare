@@ -9,7 +9,7 @@ import { router } from "./src/routes/index";
 import { logger } from "./utils/winston";
 const { PORT } = process.env;
 
-console.log("hello")
+
 getMovies().then((value) => {
   const app = express();
 
@@ -22,5 +22,5 @@ getMovies().then((value) => {
 
   app.listen(PORT || 3000, () => logger.info(`port running for user service at ${PORT}`));
  });
-console.log("hi")
+
 
