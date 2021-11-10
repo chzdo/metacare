@@ -124,8 +124,8 @@ async function getMovies(req: Request): Promise<errResponseObjectType | successR
     {
      query: {
       movieId: ids.join(":"),
-      sort: "createdAt:DESC",
-      project: "createdAt,id,comment,ip,movieId",
+      sort: "id:DESC",
+      project: "id,comment,ip,movieId,createdDate",
      },
     },
     comments
@@ -168,8 +168,8 @@ async function getMoviesbyId(req: Request): Promise<errResponseObjectType | succ
    {
     query: {
      movieId,
-     sort: "createdAt:DESC",
-     project: "createdAt,id,comment,ip,movieId",
+     sort: "id:DESC",
+     project: "createdDate,id,comment,ip,movieId",
     },
    },
    comments

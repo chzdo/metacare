@@ -25,8 +25,8 @@ const starwarsSchema = {
   allowNull: false,
  },
  createdDate: {
-  type: DataTypes.DATE,
-  defaultValue: new Date(),
+  type: DataTypes.STRING,
+  defaultValue: new Date().toUTCString(),
  },
 
  isDeleted: {
